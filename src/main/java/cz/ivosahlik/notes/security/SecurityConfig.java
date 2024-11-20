@@ -53,7 +53,7 @@ public class SecurityConfig {
                         .ignoringRequestMatchers("/api/auth/public/**")
         );
         //http.csrf(AbstractHttpConfigurer::disable);
-        http.authorizeHttpRequests((requests)
+        http.authorizeHttpRequests(requests
                 -> requests
                 .requestMatchers("/api/admin/**").hasRole("ADMIN")
                 .requestMatchers("/api/csrf-token").permitAll()
